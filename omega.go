@@ -1,3 +1,10 @@
 package omega
 
-type TransitFrameData isTransitFrame_Data
+import "encoding/json"
+
+type TransitFrameData = isTransitFrame_Data
+
+func (x *Error) error() string {
+	bs, _ := json.Marshal(x)
+	return string(bs)
+}
