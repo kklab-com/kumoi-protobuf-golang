@@ -73,6 +73,101 @@ func (Role) EnumDescriptor() ([]byte, []int) {
 	return file_omega_proto_rawDescGZIP(), []int{0}
 }
 
+type SessionRole int32
+
+const (
+	SessionRole_SessionRoleOwner        SessionRole = 0
+	SessionRole_SessionRoleParticipator SessionRole = 1
+)
+
+// Enum value maps for SessionRole.
+var (
+	SessionRole_name = map[int32]string{
+		0: "SessionRoleOwner",
+		1: "SessionRoleParticipator",
+	}
+	SessionRole_value = map[string]int32{
+		"SessionRoleOwner":        0,
+		"SessionRoleParticipator": 1,
+	}
+)
+
+func (x SessionRole) Enum() *SessionRole {
+	p := new(SessionRole)
+	*p = x
+	return p
+}
+
+func (x SessionRole) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (SessionRole) Descriptor() protoreflect.EnumDescriptor {
+	return file_omega_proto_enumTypes[1].Descriptor()
+}
+
+func (SessionRole) Type() protoreflect.EnumType {
+	return &file_omega_proto_enumTypes[1]
+}
+
+func (x SessionRole) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use SessionRole.Descriptor instead.
+func (SessionRole) EnumDescriptor() ([]byte, []int) {
+	return file_omega_proto_rawDescGZIP(), []int{1}
+}
+
+type ReplayVolume int32
+
+const (
+	ReplayVolume_ReplayVolumeLow    ReplayVolume = 0
+	ReplayVolume_ReplayVolumeMedium ReplayVolume = 1
+	ReplayVolume_ReplayVolumeHigh   ReplayVolume = 2
+)
+
+// Enum value maps for ReplayVolume.
+var (
+	ReplayVolume_name = map[int32]string{
+		0: "ReplayVolumeLow",
+		1: "ReplayVolumeMedium",
+		2: "ReplayVolumeHigh",
+	}
+	ReplayVolume_value = map[string]int32{
+		"ReplayVolumeLow":    0,
+		"ReplayVolumeMedium": 1,
+		"ReplayVolumeHigh":   2,
+	}
+)
+
+func (x ReplayVolume) Enum() *ReplayVolume {
+	p := new(ReplayVolume)
+	*p = x
+	return p
+}
+
+func (x ReplayVolume) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ReplayVolume) Descriptor() protoreflect.EnumDescriptor {
+	return file_omega_proto_enumTypes[2].Descriptor()
+}
+
+func (ReplayVolume) Type() protoreflect.EnumType {
+	return &file_omega_proto_enumTypes[2]
+}
+
+func (x ReplayVolume) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ReplayVolume.Descriptor instead.
+func (ReplayVolume) EnumDescriptor() ([]byte, []int) {
+	return file_omega_proto_rawDescGZIP(), []int{2}
+}
+
 type TransitFrame_FrameClass int32
 
 const (
@@ -118,11 +213,11 @@ func (x TransitFrame_FrameClass) String() string {
 }
 
 func (TransitFrame_FrameClass) Descriptor() protoreflect.EnumDescriptor {
-	return file_omega_proto_enumTypes[1].Descriptor()
+	return file_omega_proto_enumTypes[3].Descriptor()
 }
 
 func (TransitFrame_FrameClass) Type() protoreflect.EnumType {
-	return &file_omega_proto_enumTypes[1]
+	return &file_omega_proto_enumTypes[3]
 }
 
 func (x TransitFrame_FrameClass) Number() protoreflect.EnumNumber {
@@ -161,11 +256,11 @@ func (x TransitFrame_Version) String() string {
 }
 
 func (TransitFrame_Version) Descriptor() protoreflect.EnumDescriptor {
-	return file_omega_proto_enumTypes[2].Descriptor()
+	return file_omega_proto_enumTypes[4].Descriptor()
 }
 
 func (TransitFrame_Version) Type() protoreflect.EnumType {
-	return &file_omega_proto_enumTypes[2]
+	return &file_omega_proto_enumTypes[4]
 }
 
 func (x TransitFrame_Version) Number() protoreflect.EnumNumber {
@@ -175,6 +270,52 @@ func (x TransitFrame_Version) Number() protoreflect.EnumNumber {
 // Deprecated: Use TransitFrame_Version.Descriptor instead.
 func (TransitFrame_Version) EnumDescriptor() ([]byte, []int) {
 	return file_omega_proto_rawDescGZIP(), []int{1, 1}
+}
+
+type VoteStatus_StatusType int32
+
+const (
+	VoteStatus_Allow VoteStatus_StatusType = 0
+	VoteStatus_Deny  VoteStatus_StatusType = 1
+)
+
+// Enum value maps for VoteStatus_StatusType.
+var (
+	VoteStatus_StatusType_name = map[int32]string{
+		0: "Allow",
+		1: "Deny",
+	}
+	VoteStatus_StatusType_value = map[string]int32{
+		"Allow": 0,
+		"Deny":  1,
+	}
+)
+
+func (x VoteStatus_StatusType) Enum() *VoteStatus_StatusType {
+	p := new(VoteStatus_StatusType)
+	*p = x
+	return p
+}
+
+func (x VoteStatus_StatusType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (VoteStatus_StatusType) Descriptor() protoreflect.EnumDescriptor {
+	return file_omega_proto_enumTypes[5].Descriptor()
+}
+
+func (VoteStatus_StatusType) Type() protoreflect.EnumType {
+	return &file_omega_proto_enumTypes[5]
+}
+
+func (x VoteStatus_StatusType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use VoteStatus_StatusType.Descriptor instead.
+func (VoteStatus_StatusType) EnumDescriptor() ([]byte, []int) {
+	return file_omega_proto_rawDescGZIP(), []int{34, 0}
 }
 
 type Error struct {
@@ -3451,20 +3592,32 @@ var file_omega_proto_rawDesc = []byte{
 	0x28, 0x09, 0x52, 0x02, 0x76, 0x74, 0x12, 0x12, 0x0a, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67,
 	0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x01, 0x6d, 0x12, 0x16, 0x0a, 0x0a, 0x73, 0x65,
 	0x71, 0x75, 0x65, 0x6e, 0x74, 0x69, 0x61, 0x6c, 0x18, 0x08, 0x20, 0x01, 0x28, 0x08, 0x52, 0x02,
-	0x73, 0x65, 0x22, 0x35, 0x0a, 0x0a, 0x56, 0x6f, 0x74, 0x65, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73,
+	0x73, 0x65, 0x22, 0x58, 0x0a, 0x0a, 0x56, 0x6f, 0x74, 0x65, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73,
 	0x12, 0x13, 0x0a, 0x07, 0x76, 0x6f, 0x74, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
 	0x09, 0x52, 0x02, 0x76, 0x74, 0x12, 0x12, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18,
-	0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x02, 0x73, 0x74, 0x2a, 0x47, 0x0a, 0x04, 0x52, 0x6f, 0x6c,
-	0x65, 0x12, 0x0b, 0x0a, 0x07, 0x52, 0x6f, 0x6c, 0x65, 0x41, 0x6c, 0x6c, 0x10, 0x00, 0x12, 0x0d,
-	0x0a, 0x09, 0x52, 0x6f, 0x6c, 0x65, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x10, 0x01, 0x12, 0x0d, 0x0a,
-	0x09, 0x52, 0x6f, 0x6c, 0x65, 0x4f, 0x77, 0x6e, 0x65, 0x72, 0x10, 0x02, 0x12, 0x14, 0x0a, 0x10,
-	0x52, 0x6f, 0x6c, 0x65, 0x50, 0x61, 0x72, 0x74, 0x69, 0x63, 0x69, 0x70, 0x61, 0x74, 0x6f, 0x72,
-	0x10, 0x03, 0x42, 0x50, 0x5a, 0x4e, 0x67, 0x69, 0x74, 0x6c, 0x61, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2f, 0x6b, 0x6b, 0x6c, 0x61, 0x62, 0x2d, 0x63, 0x6f, 0x6d, 0x2f, 0x76, 0x65, 0x6e, 0x74, 0x75,
-	0x72, 0x65, 0x2d, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x2f, 0x67, 0x75, 0x6e, 0x64, 0x61,
-	0x6d, 0x2f, 0x67, 0x75, 0x6e, 0x64, 0x61, 0x6d, 0x2d, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75,
-	0x66, 0x2d, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2f, 0x6f, 0x6d, 0x65, 0x67, 0x61, 0x3b, 0x6f,
-	0x6d, 0x65, 0x67, 0x61, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x02, 0x73, 0x74, 0x22, 0x21, 0x0a, 0x0a, 0x53, 0x74, 0x61,
+	0x74, 0x75, 0x73, 0x54, 0x79, 0x70, 0x65, 0x12, 0x09, 0x0a, 0x05, 0x41, 0x6c, 0x6c, 0x6f, 0x77,
+	0x10, 0x00, 0x12, 0x08, 0x0a, 0x04, 0x44, 0x65, 0x6e, 0x79, 0x10, 0x01, 0x2a, 0x47, 0x0a, 0x04,
+	0x52, 0x6f, 0x6c, 0x65, 0x12, 0x0b, 0x0a, 0x07, 0x52, 0x6f, 0x6c, 0x65, 0x41, 0x6c, 0x6c, 0x10,
+	0x00, 0x12, 0x0d, 0x0a, 0x09, 0x52, 0x6f, 0x6c, 0x65, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x10, 0x01,
+	0x12, 0x0d, 0x0a, 0x09, 0x52, 0x6f, 0x6c, 0x65, 0x4f, 0x77, 0x6e, 0x65, 0x72, 0x10, 0x02, 0x12,
+	0x14, 0x0a, 0x10, 0x52, 0x6f, 0x6c, 0x65, 0x50, 0x61, 0x72, 0x74, 0x69, 0x63, 0x69, 0x70, 0x61,
+	0x74, 0x6f, 0x72, 0x10, 0x03, 0x2a, 0x40, 0x0a, 0x0b, 0x53, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e,
+	0x52, 0x6f, 0x6c, 0x65, 0x12, 0x14, 0x0a, 0x10, 0x53, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52,
+	0x6f, 0x6c, 0x65, 0x4f, 0x77, 0x6e, 0x65, 0x72, 0x10, 0x00, 0x12, 0x1b, 0x0a, 0x17, 0x53, 0x65,
+	0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x6f, 0x6c, 0x65, 0x50, 0x61, 0x72, 0x74, 0x69, 0x63, 0x69,
+	0x70, 0x61, 0x74, 0x6f, 0x72, 0x10, 0x01, 0x2a, 0x51, 0x0a, 0x0c, 0x52, 0x65, 0x70, 0x6c, 0x61,
+	0x79, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x12, 0x13, 0x0a, 0x0f, 0x52, 0x65, 0x70, 0x6c, 0x61,
+	0x79, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x4c, 0x6f, 0x77, 0x10, 0x00, 0x12, 0x16, 0x0a, 0x12,
+	0x52, 0x65, 0x70, 0x6c, 0x61, 0x79, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x4d, 0x65, 0x64, 0x69,
+	0x75, 0x6d, 0x10, 0x01, 0x12, 0x14, 0x0a, 0x10, 0x52, 0x65, 0x70, 0x6c, 0x61, 0x79, 0x56, 0x6f,
+	0x6c, 0x75, 0x6d, 0x65, 0x48, 0x69, 0x67, 0x68, 0x10, 0x02, 0x42, 0x50, 0x5a, 0x4e, 0x67, 0x69,
+	0x74, 0x6c, 0x61, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6b, 0x6b, 0x6c, 0x61, 0x62, 0x2d, 0x63,
+	0x6f, 0x6d, 0x2f, 0x76, 0x65, 0x6e, 0x74, 0x75, 0x72, 0x65, 0x2d, 0x70, 0x72, 0x6f, 0x6a, 0x65,
+	0x63, 0x74, 0x2f, 0x67, 0x75, 0x6e, 0x64, 0x61, 0x6d, 0x2f, 0x67, 0x75, 0x6e, 0x64, 0x61, 0x6d,
+	0x2d, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2d, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67,
+	0x2f, 0x6f, 0x6d, 0x65, 0x67, 0x61, 0x3b, 0x6f, 0x6d, 0x65, 0x67, 0x61, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -3479,100 +3632,103 @@ func file_omega_proto_rawDescGZIP() []byte {
 	return file_omega_proto_rawDescData
 }
 
-var file_omega_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
+var file_omega_proto_enumTypes = make([]protoimpl.EnumInfo, 6)
 var file_omega_proto_msgTypes = make([]protoimpl.MessageInfo, 35)
 var file_omega_proto_goTypes = []interface{}{
 	(Role)(0),                      // 0: omega.Role
-	(TransitFrame_FrameClass)(0),   // 1: omega.TransitFrame.FrameClass
-	(TransitFrame_Version)(0),      // 2: omega.TransitFrame.Version
-	(*Error)(nil),                  // 3: omega.Error
-	(*TransitFrame)(nil),           // 4: omega.TransitFrame
-	(*Close)(nil),                  // 5: omega.Close
-	(*Ping)(nil),                   // 6: omega.Ping
-	(*Pong)(nil),                   // 7: omega.Pong
-	(*Stack)(nil),                  // 8: omega.Stack
-	(*Broadcast)(nil),              // 9: omega.Broadcast
-	(*Hello)(nil),                  // 10: omega.Hello
-	(*ServerTime)(nil),             // 11: omega.ServerTime
-	(*PlaybackChannelMessage)(nil), // 12: omega.PlaybackChannelMessage
-	(*GetChannelMeta)(nil),         // 13: omega.GetChannelMeta
-	(*SetChannelMeta)(nil),         // 14: omega.SetChannelMeta
-	(*CreateChannel)(nil),          // 15: omega.CreateChannel
-	(*JoinChannel)(nil),            // 16: omega.JoinChannel
-	(*LeaveChannel)(nil),           // 17: omega.LeaveChannel
-	(*CloseChannel)(nil),           // 18: omega.CloseChannel
-	(*ChannelMessage)(nil),         // 19: omega.ChannelMessage
-	(*ChannelOwnerMessage)(nil),    // 20: omega.ChannelOwnerMessage
-	(*ChannelCount)(nil),           // 21: omega.ChannelCount
-	(*ReplayChannelMessage)(nil),   // 22: omega.ReplayChannelMessage
-	(*GetSessionMeta)(nil),         // 23: omega.GetSessionMeta
-	(*SetSessionMeta)(nil),         // 24: omega.SetSessionMeta
-	(*SessionMessage)(nil),         // 25: omega.SessionMessage
-	(*SessionsMessage)(nil),        // 26: omega.SessionsMessage
-	(*GetVoteMeta)(nil),            // 27: omega.GetVoteMeta
-	(*SetVoteMeta)(nil),            // 28: omega.SetVoteMeta
-	(*CreateVote)(nil),             // 29: omega.CreateVote
-	(*JoinVote)(nil),               // 30: omega.JoinVote
-	(*LeaveVote)(nil),              // 31: omega.LeaveVote
-	(*CloseVote)(nil),              // 32: omega.CloseVote
-	(*VoteMessage)(nil),            // 33: omega.VoteMessage
-	(*VoteSelect)(nil),             // 34: omega.VoteSelect
-	(*VoteCount)(nil),              // 35: omega.VoteCount
-	(*VoteOwnerMessage)(nil),       // 36: omega.VoteOwnerMessage
-	(*VoteStatus)(nil),             // 37: omega.VoteStatus
-	(*_struct.Struct)(nil),         // 38: google.protobuf.Struct
+	(SessionRole)(0),               // 1: omega.SessionRole
+	(ReplayVolume)(0),              // 2: omega.ReplayVolume
+	(TransitFrame_FrameClass)(0),   // 3: omega.TransitFrame.FrameClass
+	(TransitFrame_Version)(0),      // 4: omega.TransitFrame.Version
+	(VoteStatus_StatusType)(0),     // 5: omega.VoteStatus.StatusType
+	(*Error)(nil),                  // 6: omega.Error
+	(*TransitFrame)(nil),           // 7: omega.TransitFrame
+	(*Close)(nil),                  // 8: omega.Close
+	(*Ping)(nil),                   // 9: omega.Ping
+	(*Pong)(nil),                   // 10: omega.Pong
+	(*Stack)(nil),                  // 11: omega.Stack
+	(*Broadcast)(nil),              // 12: omega.Broadcast
+	(*Hello)(nil),                  // 13: omega.Hello
+	(*ServerTime)(nil),             // 14: omega.ServerTime
+	(*PlaybackChannelMessage)(nil), // 15: omega.PlaybackChannelMessage
+	(*GetChannelMeta)(nil),         // 16: omega.GetChannelMeta
+	(*SetChannelMeta)(nil),         // 17: omega.SetChannelMeta
+	(*CreateChannel)(nil),          // 18: omega.CreateChannel
+	(*JoinChannel)(nil),            // 19: omega.JoinChannel
+	(*LeaveChannel)(nil),           // 20: omega.LeaveChannel
+	(*CloseChannel)(nil),           // 21: omega.CloseChannel
+	(*ChannelMessage)(nil),         // 22: omega.ChannelMessage
+	(*ChannelOwnerMessage)(nil),    // 23: omega.ChannelOwnerMessage
+	(*ChannelCount)(nil),           // 24: omega.ChannelCount
+	(*ReplayChannelMessage)(nil),   // 25: omega.ReplayChannelMessage
+	(*GetSessionMeta)(nil),         // 26: omega.GetSessionMeta
+	(*SetSessionMeta)(nil),         // 27: omega.SetSessionMeta
+	(*SessionMessage)(nil),         // 28: omega.SessionMessage
+	(*SessionsMessage)(nil),        // 29: omega.SessionsMessage
+	(*GetVoteMeta)(nil),            // 30: omega.GetVoteMeta
+	(*SetVoteMeta)(nil),            // 31: omega.SetVoteMeta
+	(*CreateVote)(nil),             // 32: omega.CreateVote
+	(*JoinVote)(nil),               // 33: omega.JoinVote
+	(*LeaveVote)(nil),              // 34: omega.LeaveVote
+	(*CloseVote)(nil),              // 35: omega.CloseVote
+	(*VoteMessage)(nil),            // 36: omega.VoteMessage
+	(*VoteSelect)(nil),             // 37: omega.VoteSelect
+	(*VoteCount)(nil),              // 38: omega.VoteCount
+	(*VoteOwnerMessage)(nil),       // 39: omega.VoteOwnerMessage
+	(*VoteStatus)(nil),             // 40: omega.VoteStatus
+	(*_struct.Struct)(nil),         // 41: google.protobuf.Struct
 }
 var file_omega_proto_depIdxs = []int32{
-	38, // 0: omega.Error.data:type_name -> google.protobuf.Struct
-	1,  // 1: omega.TransitFrame.class:type_name -> omega.TransitFrame.FrameClass
-	2,  // 2: omega.TransitFrame.version:type_name -> omega.TransitFrame.Version
-	3,  // 3: omega.TransitFrame.error:type_name -> omega.Error
-	5,  // 4: omega.TransitFrame.Close:type_name -> omega.Close
-	6,  // 5: omega.TransitFrame.Ping:type_name -> omega.Ping
-	7,  // 6: omega.TransitFrame.Pong:type_name -> omega.Pong
-	8,  // 7: omega.TransitFrame.Stack:type_name -> omega.Stack
-	9,  // 8: omega.TransitFrame.Broadcast:type_name -> omega.Broadcast
-	10, // 9: omega.TransitFrame.Hello:type_name -> omega.Hello
-	11, // 10: omega.TransitFrame.ServerTime:type_name -> omega.ServerTime
-	12, // 11: omega.TransitFrame.PlaybackChannelMessage:type_name -> omega.PlaybackChannelMessage
-	13, // 12: omega.TransitFrame.GetChannelMeta:type_name -> omega.GetChannelMeta
-	14, // 13: omega.TransitFrame.SetChannelMeta:type_name -> omega.SetChannelMeta
-	15, // 14: omega.TransitFrame.CreateChannel:type_name -> omega.CreateChannel
-	16, // 15: omega.TransitFrame.JoinChannel:type_name -> omega.JoinChannel
-	17, // 16: omega.TransitFrame.LeaveChannel:type_name -> omega.LeaveChannel
-	18, // 17: omega.TransitFrame.CloseChannel:type_name -> omega.CloseChannel
-	19, // 18: omega.TransitFrame.ChannelMessage:type_name -> omega.ChannelMessage
-	21, // 19: omega.TransitFrame.ChannelCount:type_name -> omega.ChannelCount
-	20, // 20: omega.TransitFrame.ChannelOwnerMessage:type_name -> omega.ChannelOwnerMessage
-	22, // 21: omega.TransitFrame.ReplayChannelMessage:type_name -> omega.ReplayChannelMessage
-	27, // 22: omega.TransitFrame.GetVoteMeta:type_name -> omega.GetVoteMeta
-	28, // 23: omega.TransitFrame.SetVoteMeta:type_name -> omega.SetVoteMeta
-	29, // 24: omega.TransitFrame.CreateVote:type_name -> omega.CreateVote
-	30, // 25: omega.TransitFrame.JoinVote:type_name -> omega.JoinVote
-	31, // 26: omega.TransitFrame.LeaveVote:type_name -> omega.LeaveVote
-	32, // 27: omega.TransitFrame.CloseVote:type_name -> omega.CloseVote
-	33, // 28: omega.TransitFrame.VoteMessage:type_name -> omega.VoteMessage
-	34, // 29: omega.TransitFrame.VoteSelect:type_name -> omega.VoteSelect
-	35, // 30: omega.TransitFrame.VoteCount:type_name -> omega.VoteCount
-	36, // 31: omega.TransitFrame.VoteOwnerMessage:type_name -> omega.VoteOwnerMessage
-	37, // 32: omega.TransitFrame.VoteStatus:type_name -> omega.VoteStatus
-	23, // 33: omega.TransitFrame.GetSessionMeta:type_name -> omega.GetSessionMeta
-	24, // 34: omega.TransitFrame.SetSessionMeta:type_name -> omega.SetSessionMeta
-	25, // 35: omega.TransitFrame.SessionMessage:type_name -> omega.SessionMessage
-	26, // 36: omega.TransitFrame.SessionsMessage:type_name -> omega.SessionsMessage
-	4,  // 37: omega.Stack.frames:type_name -> omega.TransitFrame
-	38, // 38: omega.GetChannelMeta.data:type_name -> google.protobuf.Struct
-	38, // 39: omega.SetChannelMeta.data:type_name -> google.protobuf.Struct
-	38, // 40: omega.JoinChannel.channel_metadata:type_name -> google.protobuf.Struct
-	38, // 41: omega.JoinChannel.session_metadata:type_name -> google.protobuf.Struct
+	41, // 0: omega.Error.data:type_name -> google.protobuf.Struct
+	3,  // 1: omega.TransitFrame.class:type_name -> omega.TransitFrame.FrameClass
+	4,  // 2: omega.TransitFrame.version:type_name -> omega.TransitFrame.Version
+	6,  // 3: omega.TransitFrame.error:type_name -> omega.Error
+	8,  // 4: omega.TransitFrame.Close:type_name -> omega.Close
+	9,  // 5: omega.TransitFrame.Ping:type_name -> omega.Ping
+	10, // 6: omega.TransitFrame.Pong:type_name -> omega.Pong
+	11, // 7: omega.TransitFrame.Stack:type_name -> omega.Stack
+	12, // 8: omega.TransitFrame.Broadcast:type_name -> omega.Broadcast
+	13, // 9: omega.TransitFrame.Hello:type_name -> omega.Hello
+	14, // 10: omega.TransitFrame.ServerTime:type_name -> omega.ServerTime
+	15, // 11: omega.TransitFrame.PlaybackChannelMessage:type_name -> omega.PlaybackChannelMessage
+	16, // 12: omega.TransitFrame.GetChannelMeta:type_name -> omega.GetChannelMeta
+	17, // 13: omega.TransitFrame.SetChannelMeta:type_name -> omega.SetChannelMeta
+	18, // 14: omega.TransitFrame.CreateChannel:type_name -> omega.CreateChannel
+	19, // 15: omega.TransitFrame.JoinChannel:type_name -> omega.JoinChannel
+	20, // 16: omega.TransitFrame.LeaveChannel:type_name -> omega.LeaveChannel
+	21, // 17: omega.TransitFrame.CloseChannel:type_name -> omega.CloseChannel
+	22, // 18: omega.TransitFrame.ChannelMessage:type_name -> omega.ChannelMessage
+	24, // 19: omega.TransitFrame.ChannelCount:type_name -> omega.ChannelCount
+	23, // 20: omega.TransitFrame.ChannelOwnerMessage:type_name -> omega.ChannelOwnerMessage
+	25, // 21: omega.TransitFrame.ReplayChannelMessage:type_name -> omega.ReplayChannelMessage
+	30, // 22: omega.TransitFrame.GetVoteMeta:type_name -> omega.GetVoteMeta
+	31, // 23: omega.TransitFrame.SetVoteMeta:type_name -> omega.SetVoteMeta
+	32, // 24: omega.TransitFrame.CreateVote:type_name -> omega.CreateVote
+	33, // 25: omega.TransitFrame.JoinVote:type_name -> omega.JoinVote
+	34, // 26: omega.TransitFrame.LeaveVote:type_name -> omega.LeaveVote
+	35, // 27: omega.TransitFrame.CloseVote:type_name -> omega.CloseVote
+	36, // 28: omega.TransitFrame.VoteMessage:type_name -> omega.VoteMessage
+	37, // 29: omega.TransitFrame.VoteSelect:type_name -> omega.VoteSelect
+	38, // 30: omega.TransitFrame.VoteCount:type_name -> omega.VoteCount
+	39, // 31: omega.TransitFrame.VoteOwnerMessage:type_name -> omega.VoteOwnerMessage
+	40, // 32: omega.TransitFrame.VoteStatus:type_name -> omega.VoteStatus
+	26, // 33: omega.TransitFrame.GetSessionMeta:type_name -> omega.GetSessionMeta
+	27, // 34: omega.TransitFrame.SetSessionMeta:type_name -> omega.SetSessionMeta
+	28, // 35: omega.TransitFrame.SessionMessage:type_name -> omega.SessionMessage
+	29, // 36: omega.TransitFrame.SessionsMessage:type_name -> omega.SessionsMessage
+	7,  // 37: omega.Stack.frames:type_name -> omega.TransitFrame
+	41, // 38: omega.GetChannelMeta.data:type_name -> google.protobuf.Struct
+	41, // 39: omega.SetChannelMeta.data:type_name -> google.protobuf.Struct
+	41, // 40: omega.JoinChannel.channel_metadata:type_name -> google.protobuf.Struct
+	41, // 41: omega.JoinChannel.session_metadata:type_name -> google.protobuf.Struct
 	0,  // 42: omega.ChannelMessage.role:type_name -> omega.Role
-	38, // 43: omega.GetSessionMeta.data:type_name -> google.protobuf.Struct
-	38, // 44: omega.SetSessionMeta.data:type_name -> google.protobuf.Struct
-	38, // 45: omega.GetVoteMeta.data:type_name -> google.protobuf.Struct
-	38, // 46: omega.SetVoteMeta.data:type_name -> google.protobuf.Struct
-	38, // 47: omega.JoinVote.vote_metadata:type_name -> google.protobuf.Struct
-	38, // 48: omega.JoinVote.session_metadata:type_name -> google.protobuf.Struct
-	38, // 49: omega.JoinVote.data:type_name -> google.protobuf.Struct
+	41, // 43: omega.GetSessionMeta.data:type_name -> google.protobuf.Struct
+	41, // 44: omega.SetSessionMeta.data:type_name -> google.protobuf.Struct
+	41, // 45: omega.GetVoteMeta.data:type_name -> google.protobuf.Struct
+	41, // 46: omega.SetVoteMeta.data:type_name -> google.protobuf.Struct
+	41, // 47: omega.JoinVote.vote_metadata:type_name -> google.protobuf.Struct
+	41, // 48: omega.JoinVote.session_metadata:type_name -> google.protobuf.Struct
+	41, // 49: omega.JoinVote.data:type_name -> google.protobuf.Struct
 	0,  // 50: omega.VoteMessage.role:type_name -> omega.Role
 	51, // [51:51] is the sub-list for method output_type
 	51, // [51:51] is the sub-list for method input_type
@@ -4048,7 +4204,7 @@ func file_omega_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_omega_proto_rawDesc,
-			NumEnums:      3,
+			NumEnums:      6,
 			NumMessages:   35,
 			NumExtensions: 0,
 			NumServices:   0,
