@@ -2,6 +2,7 @@ package omega
 
 import (
 	"encoding/json"
+	"time"
 )
 
 type TransitFrameData = isTransitFrame_Data
@@ -26,6 +27,11 @@ func (x *TransitFrame) Clone() *TransitFrame {
 
 func (x *TransitFrame) SetData(data isTransitFrame_Data) *TransitFrame {
 	x.Data = data
+	return x
+}
+
+func (x *TransitFrame) RenewTimestamp() *TransitFrame {
+	x.Timestamp = time.Now().UnixNano()
 	return x
 }
 
