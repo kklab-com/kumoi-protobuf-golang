@@ -1,11 +1,27 @@
 package omega
 
 import (
+	"encoding/base64"
 	"encoding/json"
 	"time"
 )
 
 type TransitFrameData = isTransitFrame_Data
+
+type TransitMessageIDCodec struct {
+}
+
+func (enc *TransitMessageIDCodec) EncodeToString(src []byte) string {
+	return base64.RawURLEncoding.EncodeToString(src)
+}
+
+func (enc *TransitMessageIDCodec) DecodeString(s string) []byte {
+	if bs, err := base64.RawURLEncoding.DecodeString(s); err == nil {
+		return bs
+	}
+
+	return []byte{}
+}
 
 func (x *Error) Error() string {
 	bs, _ := json.Marshal(x)
