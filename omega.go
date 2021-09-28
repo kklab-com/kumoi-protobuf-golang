@@ -34,7 +34,7 @@ func (x *TransitFrame) Clone() *TransitFrame {
 		Class:            x.GetClass(),
 		Version:          x.GetVersion(),
 		Timestamp:        x.GetTimestamp(),
-		Error:            x.GetError(),
+		Err:              x.GetErr(),
 		MessageId:        x.GetMessageId(),
 		RefererMessageId: x.GetRefererMessageId(),
 		Data:             x.GetData(),
@@ -84,4 +84,12 @@ func (x *TransitFrame) AsNotificationReplay() *TransitFrame {
 func (x *TransitFrame) AsError() *TransitFrame {
 	x.Class = TransitFrame_ClassError
 	return x
+}
+
+func (x *TransitFrame) Error() string {
+	if bs, err := json.Marshal(x.Err); err == nil {
+		return string(bs)
+	}
+
+	return ""
 }
